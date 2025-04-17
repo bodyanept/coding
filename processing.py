@@ -35,8 +35,11 @@ def processing(a='', b=False, c=10.0):
             square_dict[int(number)]=(number **2)
 	
     if b == True:
-        print(square_dict)
-        
+        odd_dict = {}
+        for i in square_dict:
+            if i % 2 == 0:
+                odd_dict[i] = float(i ** 2)
+        print(odd_dict)
 
 processing()
 processing(string, boolean, floating)

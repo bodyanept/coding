@@ -7,13 +7,13 @@ def processing(a='', b=False, c=10.0):
             raise ValueError
     except ValueError:
         print('Ошибка: строка пустая')
-    square_list =[]
+    square_dict ={}
     number = 0
     while number <= c:
         if number == 4.0:
             print('пропуск итерации на 4')
             number += 1.0
-            square_list.append((number **2))
+            square_dict[int(number)]=(number **2)
             continue
         elif number == 9.0:
             print('отсчет окончен на 9')
@@ -21,21 +21,21 @@ def processing(a='', b=False, c=10.0):
         if (number ** 2) < 20:
             print("Квадрат числа {number} меньше 20")
             number += 1.0
-            square_list.append((number **2))
+            square_dict[int(number)]=(number **2)
         elif (number ** 2) >= 20 and (number ** 2) <= 50:
             print("Квадрат числа {number} больше или равен 20 и меньше или равен 50 ")
             number += 1.0
-            square_list.append((number **2))
+            square_dict[int(number)]=(number **2)
         elif (number ** 2) > 50:
             print("Квадрат числа {number} больше 50")
             number += 1.0
-            square_list.append((number **2))
+            square_dict[int(number)]=(number **2)
         else:
             number += 1.0
-            square_list.append((number **2))
+            square_dict[int(number)]=(number **2)
 	
     if b == True:
-        print(square_list)
+        print(square_dict)
         
 
 processing()

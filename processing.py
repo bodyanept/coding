@@ -1,19 +1,19 @@
 string = ''
 boolean = True
-floating = 10.0
-second_floating = 15.0
-def processing(a, b, c):
+floating = 15.0
+def processing(a='', b=False, c=10.0):
     try:
         if len(a) < 1:
             raise ValueError
     except ValueError:
         print('Ошибка: строка пустая')
-    
+    square_list =[]
     number = 0
     while number <= c:
         if number == 4.0:
             print('пропуск итерации на 4')
             number += 1.0
+            square_list.append((number **2))
             continue
         elif number == 9.0:
             print('отсчет окончен на 9')
@@ -21,16 +21,22 @@ def processing(a, b, c):
         if (number ** 2) < 20:
             print("Квадрат числа {number} меньше 20")
             number += 1.0
+            square_list.append((number **2))
         elif (number ** 2) >= 20 and (number ** 2) <= 50:
             print("Квадрат числа {number} больше или равен 20 и меньше или равен 50 ")
             number += 1.0
+            square_list.append((number **2))
         elif (number ** 2) > 50:
             print("Квадрат числа {number} больше 50")
             number += 1.0
-        
+            square_list.append((number **2))
         else:
-	        number += 1.0
+            number += 1.0
+            square_list.append((number **2))
+	
+    if b == True:
+        print(square_list)
         
 
+processing()
 processing(string, boolean, floating)
-processing(string, boolean, second_floating)

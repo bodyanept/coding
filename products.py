@@ -6,6 +6,10 @@ for i in products:
     else:
         print(f'Товар:{i[0]}, Цена:{i[1]}')
 
+max_price = []
 for i in products:
+    max_price.append((i[0],(i[1]*i[2])))
     print(f'{i[0]} - всего на {i[1]*i[2]} рублей ')
-        
+
+top_price = max(max_price)
+print(top_price)

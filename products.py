@@ -13,3 +13,12 @@ for i in products:
 
 top_price = max(max_price)
 print(top_price)
+
+sum_of_all_products = 0
+def sum_price(prod):
+    global sum_of_all_products
+    sum_of_all_products += prod
+for i in max_price:
+    sum_price(i[1])
+
+print(f'Сумма всех товаров на складе будет равна: {sum_of_all_products}')

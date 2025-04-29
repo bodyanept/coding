@@ -18,3 +18,10 @@ def new_file():
         print(f(11))
         
 new_file()
+
+
+def create_f(name_f):
+    with open(name_f, 'w') as new_f:
+        new_f.write('Это первая строка этого файла')
+
+create_f('newff.txt')

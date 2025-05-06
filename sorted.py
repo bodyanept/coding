@@ -23,3 +23,10 @@ buble_sorted = buble_sort(x)
     
 print(f'До: {x}')
 print(f'После сортровки методом bubble: {buble_sorted}')
+
+
+def timsort(x):
+    return sorted(x)
+    
+print(f'До: {x}')
+print(f'После сортровки методом timsort: {timsort(x)}')

@@ -57,3 +57,24 @@ account.deposit(500)
 
 account.get_balance()
 account.get_number()
+
+
+class Animal:
+    def __init__(self,name):
+        self.name = name
+    
+    def make_sound(self):
+        return'какой звук'
+        
+class Dog(Animal):
+    def make_sound(self):
+        return'делает Гав!'
+        
+class Cat(Animal):
+    def make_sound(self):
+        return'делает Мяу!'
+        
+        
+animals = [Dog('Гаврик'),Cat('Шика')]
+for animal in animals:
+    print(animal.make_sound())

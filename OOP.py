@@ -78,3 +78,31 @@ class Cat(Animal):
 animals = [Dog('Гаврик'),Cat('Шика')]
 for animal in animals:
     print(animal.make_sound())
+
+
+import math
+
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+    
+    def area(self):
+        return self.width * self.height
+
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+    
+    def area(self):
+        return math.pi * self.radius ** 2
+
+def print_area(shape):
+    print(f"Площадь фигуры: {shape.area()}")
+
+
+rectangle = Rectangle(8, 9)
+circle = Circle(5)
+
+print_area(rectangle) 
+print_area(circle)

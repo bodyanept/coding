@@ -1,22 +1,22 @@
 import random
 
 listo = [1,2,3,4,5,6,7,8,9]
-
-exit_flag = False
+# попробуйте с шафлом и без него проверить
+# random.shuffle(listo)
 def bogosort(lst):
     while True:
-        random.shuffle(lst)
-        print(lst)
-        for i in range(0,len(lst)):
+        is_sort = True
+        for i in range(len(lst) - 1):
             if lst[i] > lst[i + 1]:
                 print(lst)
                 print('ошибка')
-                break
-            else:
-                print(lst)
-                exit_flag = True
+                is_sort = False
                 
-    if exit_flag:
-        break
+                break
+
+                
+        if is_sort:
+            print(f'список отсортирован: {lst}')
+            break
+        random.shuffle(lst)
 bogosort(listo)
-print(len(list))

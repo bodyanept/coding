@@ -23,7 +23,13 @@ class Shelter:
         
     def add_animal(self, animal):
         self.animals.append(animal)
-        print(self.animals)
-        
+    
+    def show_animals(self):
+        if len(self.animals) < 1:
+            print('Приют пуст')
+        else:
+            for animal in self.animals:
+                animal.display_info()
 shelter = Shelter()
-shelter.add_animal('aaa')
+shelter.add_animal(bobik)
+shelter.show_animals()

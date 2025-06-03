@@ -1,8 +1,11 @@
 class Animal:
+    id_counter = 0
     def __init__(self, name, species, age):
         self._name = name
         self._species = species
         self._age = age
+        Animal.id_counter += 1
+        self.id = Animal.id_counter
         
     def get_name(self):
         return self._name
@@ -13,26 +16,30 @@ class Animal:
     def get_age(self):
         return self._age
         
-
     def display_info(self):
         print(f'''
-            Имя:{self.name}
-            Вид:{self.species}
-            Возраст:{self.age}
+            Имя:{self._name}
+            Вид:{self._species}
+            Возраст:{self._age}
+            {self.id}
         ''')
     
     
     
     
 bobik = Animal('Bobik','dog',3)
-bobik.display_info()
+lelik = Animal('lelik','cat',2)
+sharik = Animal('sharik','dog',5)
+# bobik.display_info()
 
 
 class Shelter:
     animals = []
-        
+     
     def add_animal(self, animal):
         self.animals.append(animal)
+        animal.id_counter += 1
+        
     
     def show_animals(self):
         if len(self.animals) < 1:
@@ -40,10 +47,12 @@ class Shelter:
         else:
             for animal in self.animals:
                 animal.display_info()
+                
+    
     def find_by_species(self,species_name):
         finded = False
         for animal in self.animals:
-            if animal.species == species_name:
+            if animal._species == species_name:
                 animal.display_info()
                 finded = True
         if not finded:
@@ -63,8 +72,15 @@ class Shelter:
             
 shelter = Shelter()
 shelter.add_animal(bobik)
-shelter.find_by_species('cat')
+shelter.add_animal(lelik)
+shelter.add_animal(sharik)
+# shelter.find_by_species('cat')
 shelter.remove_by_name('Bobik')
-shelter = Shelter()
-shelter.add_animal(bobik)
-shelter.find_by_species('cat')
+
+shelter.show_animals()
+
+
+
+
+
+

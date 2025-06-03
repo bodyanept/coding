@@ -19,5 +19,11 @@ bobik.display_info()
 
 
 class Shelter:
-    def __init__(self):
-        animals = []
+    animals = []
+        
+    def add_animal(self, animal):
+        self.animals.append(animal)
+        print(self.animals)
+        
+shelter = Shelter()
+shelter.add_animal('aaa')

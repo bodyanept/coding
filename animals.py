@@ -79,8 +79,31 @@ shelter.remove_by_name('Bobik')
 
 shelter.show_animals()
 
+class Cat(Animal):
 
-
-
-
+    def __init__(self, name, species, age,is_indoor):
+        self._name = name
+        self._species = species
+        self._age = age
+        Animal.id_counter += 1
+        self.id = Animal.id_counter
+        self.is_indoor = is_indoor
+        
+    def display_info(self):
+        indoor = ''
+        if self.is_indoor:
+            indoor = 'нет'
+        else:
+            indoor = 'да'
+            
+        print(f'''
+            Имя:{self._name}
+            Вид:{self._species}
+            Возраст:{self._age}
+            Уличное:{indoor}
+            {self.id}
+        ''')
+        
+shika = Cat('shika','cat',2, True)
+shika.display_info()
 

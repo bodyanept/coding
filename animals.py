@@ -1,8 +1,18 @@
 class Animal:
     def __init__(self, name, species, age):
-        self.name = name
-        self.species = species
-        self.age = age
+        self._name = name
+        self._species = species
+        self._age = age
+        
+    def get_name(self):
+        return self._name
+        
+    def get_species(self):
+        return self._species
+        
+    def get_age(self):
+        return self._age
+        
 
     def display_info(self):
         print(f'''

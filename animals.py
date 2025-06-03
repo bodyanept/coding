@@ -16,3 +16,8 @@ class Animal:
     
 bobik = Animal('Bobik','dog',3)
 bobik.display_info()
+
+
+class Shelter:
+    def __init__(self):
+        animals = []

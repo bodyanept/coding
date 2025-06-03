@@ -48,6 +48,23 @@ class Shelter:
                 finded = True
         if not finded:
             print(f'животных вида {species_name} не найдено')
+
+    def remove_by_name(self,name):
+        finded = False
+        for animal in self.animals:
+            if animal._name == name:
+                self.animals.remove(animal)
+                print(f'животное с именем {name} уходит из нашего приюта(')
+                finded = True
+                break
+        if not finded:
+            print(f'животное с именем {name} не найдено')
+            
+            
+shelter = Shelter()
+shelter.add_animal(bobik)
+shelter.find_by_species('cat')
+shelter.remove_by_name('Bobik')
 shelter = Shelter()
 shelter.add_animal(bobik)
 shelter.find_by_species('cat')

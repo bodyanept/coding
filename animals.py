@@ -30,6 +30,14 @@ class Shelter:
         else:
             for animal in self.animals:
                 animal.display_info()
+    def find_by_species(self,species_name):
+        finded = False
+        for animal in self.animals:
+            if animal.species == species_name:
+                animal.display_info()
+                finded = True
+        if not finded:
+            print(f'животных вида {species_name} не найдено')
 shelter = Shelter()
 shelter.add_animal(bobik)
-shelter.show_animals()
+shelter.find_by_species('cat')

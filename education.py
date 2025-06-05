@@ -41,3 +41,13 @@ class Group:
             for student in self.students:
                 student.display_info()
         
+    def find_by_name(self, name):
+        finded = False
+        for student in self.students:
+            if name == student.get_name():
+                student.display_info()
+                finded = True
+        
+        if not finded:
+            print(f'Студента по имени {name} нет в этой группе')
+                

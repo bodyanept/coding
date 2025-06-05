@@ -51,3 +51,14 @@ class Group:
         if not finded:
             print(f'Студента по имени {name} нет в этой группе')
                 
+    def remove_student_by_id(self, student_id):
+        finded = False
+        for student in self.students:
+            if student_id == student.get_id():
+                print(f'Студент по имени {student.get_name()} исключен из группы')
+                self.students.remove(student)
+                finded = True
+        
+        if not finded:
+            print(f'Студента с id {student_id} нет в этой группе')
+                

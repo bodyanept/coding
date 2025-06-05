@@ -2,7 +2,13 @@ class Student:
     def __init__(self, name, student_id):
         self.name = name
         self.student_id = student_id
+        self.grades = []
+    def add_grade(self, grade):
+    self.grades.append(grade)
         
+    def get_average(self):
+        avg = sum(self.grades) / len(self.grades)
+        print(f'Средний балл студента {self.name} составляет : {avg}')
     def display_info(self):
         print(f'''
         Имя:{self.name}

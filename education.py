@@ -11,6 +11,15 @@ class Student:
 class Group:
     def __init__(self):
         self.students = []
+        
     def add_student(self,student):
         self.students.append(student)
+        
+    def show_students(self):
+        if len(self.students) < 1:
+            print('Группа пуста')
+        else:
+            for student in self.students:
+                student.display_info()
+        
         

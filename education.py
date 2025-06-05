@@ -8,3 +8,6 @@ class Student:
         Имя:{self.name}
         ID:{self.student_id}
         ''')
+class Group:
+    def __init__(self):
+        self.students = []

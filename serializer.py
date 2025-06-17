@@ -1,3 +1,5 @@
+import json
+
 class Book:
     def __init__(self, name, author, year):
         self.name = name
@@ -19,6 +21,7 @@ class Book:
         return cls(data["name"], data["author"], data["year"])   
 
 class libary:
+    books = []
     def add_book(self, book):
         self.save()
     
@@ -30,9 +33,19 @@ class libary:
         pass
     
     def save(self):
-        pass
+        data = []
+        for book in self.books:
+            data.append(book.to_dict())
+        with open("filename.json", "w") as f:
+            json.dump(data, f)
+        
     def load(self):
-        pass
+        with open("filename.json", "r") as f:
+            data = json.load(f)
+        self.books = []
+        for item in data:
+            book = Book.from_dict(item)
+            self.books.append(book)
     
 libary = libary()
 libary.load()

@@ -33,10 +33,10 @@ class Router:
             
 router = Router()
 
-pc1 = Computer('1',router)
-pc2 = Computer('2',router)
-pc3 = Computer('3',router)
-pc4 = Computer('4',router)
+pc1 = Computer('ff:ff:ff:ff:ff:ff',router)
+pc2 = Computer('ff:ff:ff:ff:ff:ff',router)
+pc3 = Computer('ff:ff:ff:ff:ff:ff',router)
+pc4 = Computer('ff:ff:ff:ff:ff:ff',router)
 
 router.connect(pc1)
 router.connect(pc2)

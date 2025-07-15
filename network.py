@@ -28,17 +28,22 @@ class Router:
 
     
     def route(self,packet):
-        if packet.dst in self.devices:
-            self.devices[packet.dst].receive(packet)
+        if str(packet.dst) in self.devices:
+            self.devices[str(packet.dst)].receive(packet)
             
 router = Router()
 
-pc1 = Computer('pc1',1)
-pc2 = Computer('pc2',2)
-pc3 = Computer('pc3',3)
-pc4 = Computer('pc4',4)
+pc1 = Computer('1',router)
+pc2 = Computer('2',router)
+pc3 = Computer('3',router)
+pc4 = Computer('4',router)
 
 router.connect(pc1)
 router.connect(pc2)
 router.connect(pc3)
 router.connect(pc4)
+
+pc1.send(3, 'Привет от PC1!')
+pc1.send(1, 'Ответ от PC3!')
+pc1.send(4, 'PC2 здесь')
+pc1.send(2, 'Принято')

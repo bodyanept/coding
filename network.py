@@ -24,9 +24,21 @@ class Router:
         self.devices = {}
     
     def connect(self,device):
-        self.devices.[device.name] = device
+        self.devices[device.name_comp] = device
 
     
     def route(self,packet):
         if packet.dst in self.devices:
             self.devices[packet.dst].receive(packet)
+            
+router = Router()
+
+pc1 = Computer('pc1',1)
+pc2 = Computer('pc2',2)
+pc3 = Computer('pc3',3)
+pc4 = Computer('pc4',4)
+
+router.connect(pc1)
+router.connect(pc2)
+router.connect(pc3)
+router.connect(pc4)

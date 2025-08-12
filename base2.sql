@@ -67,3 +67,7 @@ HAVING
     COUNT(s.id) > 2
 ORDER BY 
     g.id;
+
+
+ALTER TABLE students
+ADD COLUMN enrollment_year INT NOT NULL DEFAULT 2023;

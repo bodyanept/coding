@@ -16,3 +16,8 @@ CREATE TABLE groups (
 ALTER TABLE students
 ADD CONSTRAINT fk_students_groups
 FOREIGN KEY (group_id) REFERENCES groups(id);
+
+INSERT INTO groups (group_name) VALUES
+('Художественная литература'),
+('Научная фантастика'),
+('Техническая литература');

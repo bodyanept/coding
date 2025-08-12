@@ -1,0 +1,6 @@
+CREATE TABLE authors (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
+  group_id INT NOT NULL,
+  PRIMARY KEY(id)
+);

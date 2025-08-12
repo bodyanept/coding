@@ -51,3 +51,19 @@ GROUP BY
     g.id, g.group_name
 ORDER BY 
     g.id;
+
+
+SELECT 
+    g.id AS group_id,
+    g.group_name,
+    COUNT(s.id) AS student_count
+FROM 
+    groups g
+JOIN 
+    students s ON g.id = s.group_id
+GROUP BY 
+    g.id, g.group_name
+HAVING 
+    COUNT(s.id) > 2
+ORDER BY 
+    g.id;

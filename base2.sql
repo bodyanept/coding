@@ -75,3 +75,7 @@ WHERE name = 'Мария Сидорова';
 
 ALTER TABLE students
 ADD COLUMN enrollment_year INT NOT NULL DEFAULT 2023;
+
+
+DELETE FROM students
+WHERE enrollment_year < 2020;

@@ -69,5 +69,9 @@ ORDER BY
     g.id;
 
 
+UPDATE students
+SET enrollment_year = 2021
+WHERE name = 'Мария Сидорова';
+
 ALTER TABLE students
 ADD COLUMN enrollment_year INT NOT NULL DEFAULT 2023;
